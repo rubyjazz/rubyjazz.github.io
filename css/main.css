@@ -1,4 +1,3 @@
-
 body {
   background-color: #ededed;
   margin: 0;
@@ -305,42 +304,48 @@ color: #0072fc;
 letter-spacing: -15px;
 }
 
- .img {
-   visibility: hidden;
-   height: 0px;
-   width: 0px;
-   z-index: 1;
-   position:relative;
-   filter:invert(100%);
-   transition: .75s;
-    -webkit-transition: .75s;
+.img {
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  z-index: 1;
+  position: relative;
+  filter: invert(100%);
+  transition: .75s;
+  -webkit-transition: .75s;
+  will-change: transform;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+}
 
- }
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 
- .img a {
-   position:absolute;
-   height: 100%;
-   width: 100%;
-
- }
 .show {
   display: inline-block;
 }
- .show:hover > .img {
+.show:hover > .img {
   visibility: visible;
-   height: 300px;
-   width: 600px;
-   font-size: 165px;
-   color: #0072fc;
+  height: 300px;
+  width: 600px;
+  font-size: 165px;
+  color: #0072fc;
   margin-top: -80px;
-   letter-spacing: -15px;
-   filter:invert(0%);
-   transition: .75s;
-    -webkit-transition: .75s;
- }
- #jtg-img {
-   background-image: url(../img/jtg-menu-img.png);
- }
+  letter-spacing: -15px;
+  filter: invert(0%);
+  transition: .75s;
+  -webkit-transition: .75s;
+}
+
+#jtg-img {
+  background-image: url(../img/jtg-menu-img.png);
+}
 
 #spectre-img {
   background-image: url(../img/spectre-menu-img-4.png);
@@ -394,6 +399,11 @@ background-size: 100%;
 
 #etc-img {
   background-image: url(../img/etc-menu-img.png);
+  background-size: 100%;
+}
+
+#new-project-img {
+  background-color: #000000;
   background-size: 100%;
 }
 
@@ -725,10 +735,10 @@ img {
   font-size: 6vw;
   font-family: 'IBM Plex Mono', sans-serif;
   color: #ededed;
-   -webkit-text-stroke: 3px #0072fc;
-   font-family: 'Archivo Black',sans-serif;
-   word-wrap: break-word;
-   transition: ..4s;
+  -webkit-text-stroke: 3px #0072fc;
+  font-family: 'Archivo Black', sans-serif;
+  word-wrap: break-word;
+  transition: 0.4s;
 }
 
 #no-outline {
@@ -1007,4 +1017,185 @@ img {
      display: none;
    }
 
+}
+
+/* Add support for WebP with fallback */
+@supports (background-image: url('image.webp')) {
+  #gh-illo-img { 
+    background-image: url(../img/gh-illo-menu-img.webp);
+  }
+  #spectre-img { 
+    background-image: url(../img/spectre-menu-img-4.webp);
+  }
+  #red-string-img { 
+    background-image: url(../img/red-string-menu-img.webp);
+  }
+  #sat-img { 
+    background-image: url(../img/sat-img-1.webp);
+  }
+  #cent-img { 
+    background-image: url(../img/cent-menu-img.webp);
+  }
+  #cci-rebrand-img { 
+    background-image: url(../img/cci-rebrand-menu-img.webp);
+  }
+  #mural-img { 
+    background-image: url(../img/mural-menu-img.webp);
+  }
+  #SDC-img { 
+    background-image: url(../img/SDC-menu-img.webp);
+  }
+  #ERG-img { 
+    background-image: url(../img/erg-menu-img.webp);
+  }
+  #dur-img { 
+    background-image: url(../img/dur-menu-img.webp);
+  }
+  #etc-img { 
+    background-image: url(../img/etc-menu-img.webp);
+  }
+}
+
+/* Fallback for browsers that don't support WebP */
+#gh-illo-img { 
+  background-image: url(../img/gh-illo-menu-img.png);
+}
+#spectre-img { 
+  background-image: url(../img/spectre-menu-img-4.png);
+}
+#red-string-img { 
+  background-image: url(../img/red-string-menu-img.png);
+}
+#sat-img { 
+  background-image: url(../img/sat-img-1.jpg);
+}
+#cent-img { 
+  background-image: url(../img/cent-menu-img.png);
+}
+#cci-rebrand-img { 
+  background-image: url(../img/cci-rebrand-menu-img.png);
+}
+#mural-img { 
+  background-image: url(../img/mural-menu-img.png);
+}
+#SDC-img { 
+  background-image: url(../img/SDC-menu-img.jpg);
+}
+#ERG-img { 
+  background-image: url(../img/erg-menu-img.png);
+}
+#dur-img { 
+  background-image: url(../img/dur-menu-img.png);
+}
+#etc-img { 
+  background-image: url(../img/etc-menu-img.png);
+}
+
+/* Responsive image loading */
+@media screen and (max-width: 800px) {
+  #gh-illo-img { 
+    background-image: url(../img/gh-illo-menu-img-thumbnail.webp);
+  }
+  #spectre-img { 
+    background-image: url(../img/spectre-menu-img-4-thumbnail.webp);
+  }
+  #red-string-img { 
+    background-image: url(../img/red-string-menu-img-thumbnail.webp);
+  }
+  #sat-img { 
+    background-image: url(../img/sat-img-1-thumbnail.webp);
+  }
+  #cent-img { 
+    background-image: url(../img/cent-menu-img-thumbnail.webp);
+  }
+  #cci-rebrand-img { 
+    background-image: url(../img/cci-rebrand-menu-img-thumbnail.webp);
+  }
+  #mural-img { 
+    background-image: url(../img/mural-menu-img-thumbnail.webp);
+  }
+  #SDC-img { 
+    background-image: url(../img/SDC-menu-img-thumbnail.webp);
+  }
+  #ERG-img { 
+    background-image: url(../img/erg-menu-img-thumbnail.webp);
+  }
+  #dur-img { 
+    background-image: url(../img/dur-menu-img-thumbnail.webp);
+  }
+  #etc-img { 
+    background-image: url(../img/etc-menu-img-thumbnail.webp);
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  #gh-illo-img { 
+    background-image: url(../img/gh-illo-menu-img-medium.webp);
+  }
+  #spectre-img { 
+    background-image: url(../img/spectre-menu-img-4-medium.webp);
+  }
+  #red-string-img { 
+    background-image: url(../img/red-string-menu-img-medium.webp);
+  }
+  #sat-img { 
+    background-image: url(../img/sat-img-1-medium.webp);
+  }
+  #cent-img { 
+    background-image: url(../img/cent-menu-img-medium.webp);
+  }
+  #cci-rebrand-img { 
+    background-image: url(../img/cci-rebrand-menu-img-medium.webp);
+  }
+  #mural-img { 
+    background-image: url(../img/mural-menu-img-medium.webp);
+  }
+  #SDC-img { 
+    background-image: url(../img/SDC-menu-img-medium.webp);
+  }
+  #ERG-img { 
+    background-image: url(../img/erg-menu-img-medium.webp);
+  }
+  #dur-img { 
+    background-image: url(../img/dur-menu-img-medium.webp);
+  }
+  #etc-img { 
+    background-image: url(../img/etc-menu-img-medium.webp);
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  #gh-illo-img { 
+    background-image: url(../img/gh-illo-menu-img-large.webp);
+  }
+  #spectre-img { 
+    background-image: url(../img/spectre-menu-img-4-large.webp);
+  }
+  #red-string-img { 
+    background-image: url(../img/red-string-menu-img-large.webp);
+  }
+  #sat-img { 
+    background-image: url(../img/sat-img-1-large.webp);
+  }
+  #cent-img { 
+    background-image: url(../img/cent-menu-img-large.webp);
+  }
+  #cci-rebrand-img { 
+    background-image: url(../img/cci-rebrand-menu-img-large.webp);
+  }
+  #mural-img { 
+    background-image: url(../img/mural-menu-img-large.webp);
+  }
+  #SDC-img { 
+    background-image: url(../img/SDC-menu-img-large.webp);
+  }
+  #ERG-img { 
+    background-image: url(../img/erg-menu-img-large.webp);
+  }
+  #dur-img { 
+    background-image: url(../img/dur-menu-img-large.webp);
+  }
+  #etc-img { 
+    background-image: url(../img/etc-menu-img-large.webp);
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "rubyjazz-portfolio",
+  "version": "1.0.0",
+  "description": "Ruby Jazz Design Portfolio",
+  "scripts": {
+    "optimize-images": "node optimize-images.js",
+    "postinstall": "npm run optimize-images"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1"
+  }
+} 
